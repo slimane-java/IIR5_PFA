@@ -25,7 +25,7 @@ public class Etudiant extends User implements Serializable{
 
 	public Etudiant(int idUser, String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
 			String tel,String niveauScolaire,String filier) {
-		super(idUser, nom, prenom, dateNaissance, dateIntegrer, email, tel);
+		super( nom, prenom, dateNaissance, dateIntegrer, email, tel);
 		
 		this.NiveauScolaire=niveauScolaire;
 		this.Filier=filier;

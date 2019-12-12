@@ -35,10 +35,10 @@ public class User implements Serializable{
 	}
 
 
-	public User(int idUser, String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
+	public User( String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
 			String tel) {
 		super();
-		IdUser = idUser;
+		
 		Nom = nom;
 		Prenom = prenom;
 		DateNaissance = dateNaissance;

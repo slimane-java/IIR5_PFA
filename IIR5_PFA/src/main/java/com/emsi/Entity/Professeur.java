@@ -22,7 +22,7 @@ public class Professeur extends User{
 
 	public Professeur(int idUser, String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
 			String tel) {
-		super(idUser, nom, prenom, dateNaissance, dateIntegrer, email, tel);
+		super( nom, prenom, dateNaissance, dateIntegrer, email, tel);
 		// TODO Auto-generated constructor stub
 	}
 

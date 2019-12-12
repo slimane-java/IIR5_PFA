@@ -8,6 +8,7 @@ public class Iir5PfaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Iir5PfaApplication.class, args);
+		int a;
 	}
 
 }

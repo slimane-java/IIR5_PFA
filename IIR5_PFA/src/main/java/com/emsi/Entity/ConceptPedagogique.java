@@ -15,18 +15,16 @@ public class ConceptPedagogique implements Serializable{
 	@Id
 	private int IdCP;
 	private String Nom;
-	private String Type;
 	private String Url;
 	private String Description;
 	private Date dateCreation;
 	private int  Dure ;
 	@ManyToOne
 	private Chapiter chapiter;
-	public ConceptPedagogique(String nom, String type, String url, String description) {
+	public ConceptPedagogique(String nom, String url, String description) {
 		super();
 		
 		Nom = nom;
-		Type = type;
 		Url = url;
 		Description = description;
 	}
@@ -40,12 +38,6 @@ public class ConceptPedagogique implements Serializable{
 	}
 	public void setNom(String nom) {
 		Nom = nom;
-	}
-	public String getType() {
-		return Type;
-	}
-	public void setType(String type) {
-		Type = type;
 	}
 	public String getUrl() {
 		return Url;

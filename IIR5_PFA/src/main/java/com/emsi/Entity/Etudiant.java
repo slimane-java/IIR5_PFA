@@ -14,6 +14,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
 
 public class Etudiant extends User implements Serializable{
 	
+	
+
 	private String NiveauScolaire;
 	private String Filier;
 	
@@ -24,8 +26,8 @@ public class Etudiant extends User implements Serializable{
 	}
 
 	public Etudiant(int idUser, String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
-			String tel,String niveauScolaire,String filier) {
-		super( nom, prenom, dateNaissance, dateIntegrer, email, tel);
+			String tel,String niveauScolaire,String login,String passwored,String filier) {
+		super( nom, prenom, dateNaissance, dateIntegrer, email, tel,login,passwored);
 		
 		this.NiveauScolaire=niveauScolaire;
 		this.Filier=filier;
@@ -40,6 +42,13 @@ public class Etudiant extends User implements Serializable{
 		NiveauScolaire = niveauScolaire;
 	}
 	
+	public String getFilier() {
+		return Filier;
+	}
+
+	public void setFilier(String filier) {
+		Filier = filier;
+	}
 	
 
 }

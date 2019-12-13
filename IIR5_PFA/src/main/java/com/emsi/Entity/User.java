@@ -18,13 +18,15 @@ import javax.persistence.ManyToOne;
 public class User implements Serializable{
 
 	@Id
-	private int IdUser;
+	private int    IdUser;
 	private String Nom;
 	private String Prenom;
-	private Date DateNaissance;
-	private Date DateIntegrer;
+	private Date   DateNaissance;
+	private Date   DateIntegrer;
 	private String Email;
 	private String Tel;
+	private String Login;
+	private String Passwored;
 	
 	@ManyToMany(mappedBy = "users")
 	private Set<Cours>cours=new HashSet<Cours>();
@@ -36,7 +38,7 @@ public class User implements Serializable{
 
 
 	public User( String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
-			String tel) {
+			String tel,String login,String passwored) {
 		super();
 		
 		Nom = nom;
@@ -45,6 +47,38 @@ public class User implements Serializable{
 		DateIntegrer = dateIntegrer;
 		Email = email;
 		Tel = tel;
+		Login=login;
+		Passwored=passwored;
+	}
+
+
+	public String getLogin() {
+		return Login;
+	}
+
+
+	public void setLogin(String login) {
+		Login = login;
+	}
+
+
+	public String getPasswored() {
+		return Passwored;
+	}
+
+
+	public void setPasswored(String passwored) {
+		Passwored = passwored;
+	}
+
+
+	public Set<Cours> getCours() {
+		return cours;
+	}
+
+
+	public void setCours(Set<Cours> cours) {
+		this.cours = cours;
 	}
 
 

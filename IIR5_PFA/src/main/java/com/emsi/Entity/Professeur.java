@@ -21,9 +21,10 @@ public class Professeur extends User{
 
 
 	public Professeur(int idUser, String nom, String prenom, Date dateNaissance, Date dateIntegrer, String email,
-			String tel) {
-		super( nom, prenom, dateNaissance, dateIntegrer, email, tel);
+			String tel,String login,String passwored,String specialite) {
+		super( nom, prenom, dateNaissance, dateIntegrer, email, tel,login,passwored);
 		// TODO Auto-generated constructor stub
+		Specialite=specialite;
 	}
 
 

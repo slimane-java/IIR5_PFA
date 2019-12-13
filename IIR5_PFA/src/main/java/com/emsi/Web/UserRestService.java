@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.emsi.DAO.EtudiantRepository;
 import com.emsi.DAO.UserRepository;
+import com.emsi.Entity.Etudiant;
 import com.emsi.Entity.User;
 
 @RestController
@@ -17,6 +19,8 @@ import com.emsi.Entity.User;
 public class UserRestService {
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private EtudiantRepository etudiantRepository;
 	
 	@RequestMapping(value = "AddUser",method=RequestMethod.GET )
 	public User AddUser(@RequestBody User u)
@@ -54,6 +58,13 @@ public class UserRestService {
 	public List<User> UpdateUser()
 	{
 		return userRepository.findAll();
+		
+	}
+	
+	@RequestMapping(value = "AllEtude",method=RequestMethod.GET )
+	public List<Etudiant> UpdateEtude()
+	{
+		return etudiantRepository.findAll();
 		
 	}
 

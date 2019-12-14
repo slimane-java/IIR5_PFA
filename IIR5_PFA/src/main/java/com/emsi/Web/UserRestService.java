@@ -17,7 +17,9 @@ import com.emsi.Entity.User;
 @RestController
 @CrossOrigin("*")
 public class UserRestService {
-	@Autowired
+	
+
+	/*@Autowired
 	private UserRepository userRepository;
 	@Autowired
 	private EtudiantRepository etudiantRepository;
@@ -68,4 +70,6 @@ public class UserRestService {
 		
 	}
 
+	*/
 }
+

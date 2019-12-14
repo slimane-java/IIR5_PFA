@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -15,7 +16,6 @@ import javax.persistence.PrimaryKeyJoinColumn;
 public class Etudiant extends User implements Serializable{
 	
 	
-
 	private String NiveauScolaire;
 	private String Filier;
 	

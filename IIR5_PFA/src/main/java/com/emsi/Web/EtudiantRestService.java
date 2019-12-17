@@ -22,8 +22,7 @@ import com.emsi.Entity.User;
 public class EtudiantRestService {
 	
 
-	@Autowired
-	private UserRepository userRepository;
+
 	@Autowired
 	private EtudiantRepository etudiantRepository;
 	

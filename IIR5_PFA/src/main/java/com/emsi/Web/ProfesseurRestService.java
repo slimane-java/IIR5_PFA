@@ -21,8 +21,7 @@ import com.emsi.Entity.User;
 @CrossOrigin("*")
 public class ProfesseurRestService {
 	
-	@Autowired
-	private UserRepository userRepository;
+
 	@Autowired
 	private ProfesseurRepository professeurRepository;
 	

@@ -1,7 +1,9 @@
 package com.emsi.Web;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +33,11 @@ public class UserRestService {
 	@Autowired
 	private ProfesseurRepository professeurRepository;
 	
+	
 	@RequestMapping(value = "Login/{login}/{passwored}",method=RequestMethod.GET )
 	public List<String>   Conextion(@PathVariable String login,@PathVariable String passwored)
 	{
+		List<String> map=new ArrayList<String>();
 		   	
 		Optional<User> u=userRepository.recherche(login,passwored);
 		
@@ -45,14 +49,20 @@ public class UserRestService {
 		{
 			
 		Optional<Etudiant>e=etudiantRepository.findById(u.get().getIdUser());
-			ls.add("etudiantEspace");
+		
+		map.add("etudiantEspace");
+		map.add(""+e.get().getIdUser());
+			
 		}
 	 
 		
 		if(professeurRepository.findById(u.get().getIdUser()).isPresent()) 
 		{
 			Optional<Professeur>p=professeurRepository.findById(u.get().getIdUser());
-			ls.add("professeurEspace");
+			
+			map.add("professeurEspace");
+			map.add(""+p.get().getIdUser());
+			
 				
 				
 				
@@ -63,7 +73,7 @@ public class UserRestService {
 		
 		}
 		
-		 return ls; 
+		 return map; 
 		
 				
 				

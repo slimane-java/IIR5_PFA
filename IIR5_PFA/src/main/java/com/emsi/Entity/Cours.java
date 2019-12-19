@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -16,6 +19,7 @@ public class Cours implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int IdCour;
 	private String NomCour;
 	private int NbHeure;
@@ -62,6 +66,24 @@ public class Cours implements Serializable{
 	}
 	public void setDescription(String description) {
 		Description = description;
+	}
+	public int getIdCour() {
+		return IdCour;
+	}
+	public void setIdCour(int idCour) {
+		IdCour = idCour;
+	}
+	public Set<Chapiter> getChapiter() {
+		return chapiter;
+	}
+	public void setChapiter(Set<Chapiter> chapiter) {
+		this.chapiter = chapiter;
+	}
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 	
 	

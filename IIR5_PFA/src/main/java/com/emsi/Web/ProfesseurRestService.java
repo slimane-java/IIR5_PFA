@@ -1,6 +1,7 @@
 package com.emsi.Web;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -51,7 +52,11 @@ public class ProfesseurRestService {
 	
 	
 
-	
+	@RequestMapping(value = "GetProf/{id}",method = RequestMethod.GET)
+	public Optional<Professeur> GetProfesseur(@PathVariable int id)
+	{
+		return professeurRepository.findById(id);
+	}
 		
 	@RequestMapping(value = "AllProf",method=RequestMethod.GET )
 	public List<Professeur> ListProfesseur()

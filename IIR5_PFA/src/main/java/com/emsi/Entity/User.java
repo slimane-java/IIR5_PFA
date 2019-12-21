@@ -31,7 +31,7 @@ public class User implements Serializable{
 	private String Login;
 	private String Passwored;
 	
-	@ManyToMany(mappedBy = "users")
+	@ManyToMany
 	private Set<Cours>cours=new HashSet<Cours>();
 	
 	public User() {

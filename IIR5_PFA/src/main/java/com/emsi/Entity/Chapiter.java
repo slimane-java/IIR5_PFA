@@ -22,8 +22,8 @@ public class Chapiter implements Serializable{
 	@ManyToOne
 	private Cours cours;
 	
-	@OneToMany(mappedBy = "chapiter")
-	private Set<ConceptPedagogique> cp;
+	
+	
 	
 	public Chapiter( String nom, String description) {
 		super();
@@ -37,6 +37,8 @@ public class Chapiter implements Serializable{
 	}
 	
 	
+
+	@OneToMany(mappedBy = "chapiter")
 	
 	public int getIdConcept() {
 		return IdChapiter;

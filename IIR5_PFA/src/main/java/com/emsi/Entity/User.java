@@ -31,8 +31,8 @@ public class User implements Serializable{
 	private String Login;
 	private String Passwored;
 	
-	@ManyToMany
-	private Set<Cours>cours=new HashSet<Cours>();
+	
+	
 	
 	public User() {
 		super();
@@ -54,7 +54,8 @@ public class User implements Serializable{
 		Passwored=passwored;
 	}
 
-
+	@ManyToMany(mappedBy = "users")
+	
 	public String getLogin() {
 		return Login;
 	}
@@ -75,14 +76,6 @@ public class User implements Serializable{
 	}
 
 
-	public Set<Cours> getCours() {
-		return cours;
-	}
-
-
-	public void setCours(Set<Cours> cours) {
-		this.cours = cours;
-	}
 
 
 	public int getIdUser() {

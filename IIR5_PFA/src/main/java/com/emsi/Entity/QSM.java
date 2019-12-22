@@ -18,6 +18,7 @@ public class QSM extends ConceptPedagogique{
         this.Type=type;
     }
 
+    @OneToMany(mappedBy = "qsm")
     public String getType() {
         return Type;
     }

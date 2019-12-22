@@ -25,8 +25,7 @@ public class Cours implements Serializable{
 	private int NbHeure;
 	private String Description;
 	
-	@OneToMany(mappedBy = "cours")
-	private Set<Chapiter> chapiter;
+	
 	
 	@ManyToMany()
 	private Set<User>users=new HashSet<User>();
@@ -45,7 +44,7 @@ public class Cours implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	@OneToMany(mappedBy = "cours")
 	
 	
 	
@@ -73,12 +72,7 @@ public class Cours implements Serializable{
 	public void setIdCour(int idCour) {
 		IdCour = idCour;
 	}
-	public Set<Chapiter> getChapiter() {
-		return chapiter;
-	}
-	public void setChapiter(Set<Chapiter> chapiter) {
-		this.chapiter = chapiter;
-	}
+	
 	public Set<User> getUsers() {
 		return users;
 	}

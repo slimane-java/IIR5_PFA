@@ -81,6 +81,12 @@ public class UserRestService {
 		
 	}
 	
+	@RequestMapping(value = "GetUser/{id}",method = RequestMethod.GET)
+	public Optional<User> GetProfesseur(@PathVariable int id)
+	{
+		return userRepository.findById(id);
+	}
+	
 
 }
 

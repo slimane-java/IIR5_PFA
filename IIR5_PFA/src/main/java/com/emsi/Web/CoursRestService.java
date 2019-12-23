@@ -36,9 +36,11 @@ public class CoursRestService {
 	}
 	
 	@RequestMapping(value = "DeleteCours/{id}",method = RequestMethod.DELETE)
-	public void DeleteCours(@PathVariable int id )
+	public List<Cours> DeleteCours(@PathVariable int id )
 	{
 		coursRepository.deleteById(id);
+		return coursRepository.findAll();
+		
 	}
 	
 	@RequestMapping(value = "AllCours",method = RequestMethod.GET)

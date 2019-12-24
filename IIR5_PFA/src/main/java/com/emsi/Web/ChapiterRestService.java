@@ -21,6 +21,9 @@ import com.emsi.Entity.User;
 @CrossOrigin("*")
 public class ChapiterRestService {
 
+	
+	
+	
 	@Autowired
 	private ChapiterRepository chapiterRepository;
 	
@@ -31,14 +34,11 @@ public class ChapiterRestService {
 		return chapiterRepository.save(c);
 	}
 	
-
-	
 	@RequestMapping(value = "DeleteChapiter/{id}",method = RequestMethod.DELETE)
 	public List<Chapiter> DeleteChapiter(@PathVariable int id )
 	{
 		chapiterRepository.deleteById(id);
 		return chapiterRepository.findAll();
-		
 	}
 	
 	@RequestMapping(value = "AllChapiter",method = RequestMethod.GET)

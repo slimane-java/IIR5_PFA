@@ -13,6 +13,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Chapiter implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int IdChapiter;
@@ -40,15 +44,15 @@ public class Chapiter implements Serializable{
 
 	@OneToMany(mappedBy = "chapiter")
 	
-	public int getIdConcept() {
+	public int getIdChapiter() {
 		return IdChapiter;
 	}
 
-	public String getNom() {
+	public String getNomChapiter() {
 		return NomChapiter;
 	}
-	public void setNom(String nom) {
-		NomChapiter = nom;
+	public void setNomChapiter(String nomChapiter) {
+		NomChapiter = nomChapiter;
 	}
 	public String getDescription() {
 		return Description;

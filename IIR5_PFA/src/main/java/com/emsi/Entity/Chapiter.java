@@ -16,7 +16,7 @@ public class Chapiter implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int IdChapiter;
-	private String Nom;
+	private String NomChapiter;
 	private String Description;
 	
 	@ManyToOne
@@ -25,10 +25,10 @@ public class Chapiter implements Serializable{
 	
 	
 	
-	public Chapiter( String nom, String description) {
+	public Chapiter( String nomChapiter, String description) {
 		super();
 		
-		Nom = nom;
+		NomChapiter = nomChapiter;
 		Description = description;
 	}
 	public Chapiter() {
@@ -45,10 +45,10 @@ public class Chapiter implements Serializable{
 	}
 
 	public String getNom() {
-		return Nom;
+		return NomChapiter;
 	}
 	public void setNom(String nom) {
-		Nom = nom;
+		NomChapiter = nom;
 	}
 	public String getDescription() {
 		return Description;

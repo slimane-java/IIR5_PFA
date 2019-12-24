@@ -1,5 +1,44 @@
 package com.emsi.Web;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.emsi.DAO.ChapiterRepository;
+import com.emsi.DAO.CoursRepository;
+import com.emsi.Entity.Chapiter;
+import com.emsi.Entity.Cours;
+
 public class ChapiterRestService {
 
+	@Autowired
+	private ChapiterRepository chapiterRepository;
+	
+	
+	@RequestMapping(value = "AddChapiter",method = RequestMethod.POST)
+	public Chapiter AddCours(@RequestBody() Chapiter c )
+	{
+		return chapiterRepository.save(c);
+	}
+	
+
+	
+	@RequestMapping(value = "DeleteChapiter/{id}",method = RequestMethod.DELETE)
+	public List<Chapiter> DeleteChapiter(@PathVariable int id )
+	{
+		chapiterRepository.deleteById(id);
+		return chapiterRepository.findAll();
+		
+	}
+	
+	@RequestMapping(value = "AllChapiter",method = RequestMethod.GET)
+	public List<Chapiter> ListChapiter()
+	{
+		return chapiterRepository.findAll();
+	}
+	
 }

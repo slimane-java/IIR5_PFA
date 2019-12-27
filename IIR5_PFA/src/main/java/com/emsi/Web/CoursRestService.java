@@ -1,6 +1,7 @@
 package com.emsi.Web;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.websocket.server.PathParam;
 
@@ -36,10 +37,10 @@ public class CoursRestService {
 	}
 	
 	@RequestMapping(value = "DeleteCours/{id}",method = RequestMethod.DELETE)
-	public List<Cours> DeleteCours(@PathVariable int id )
+	public boolean DeleteCours(@PathVariable int id )
 	{
 		coursRepository.deleteById(id);
-		return coursRepository.findAll();
+		return true;
 		
 	}
 	
@@ -48,5 +49,12 @@ public class CoursRestService {
 	{
 		return coursRepository.findAll();
 	}
-
+	
+	
+	@RequestMapping(value = "Getcours/{id}",method = RequestMethod.GET)
+	public Optional<Cours> GetCours(@PathVariable int id)
+	{
+		return coursRepository.findById(id);
+	}
+	
 }

@@ -60,7 +60,12 @@ public class Chapiter implements Serializable{
 	public void setDescription(String description) {
 		Description = description;
 	}
-	
+	public Cours getCours() {
+		return cours;
+	}
+	public void setCours(Cours cours) {
+		this.cours = cours;
+	}
 	
 	
 	

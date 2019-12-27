@@ -35,10 +35,10 @@ public class ChapiterRestService {
 	}
 	
 	@RequestMapping(value = "DeleteChapiter/{id}",method = RequestMethod.DELETE)
-	public List<Chapiter> DeleteChapiter(@PathVariable int id )
+	public boolean DeleteChapiter(@PathVariable int id )
 	{
 		chapiterRepository.deleteById(id);
-		return chapiterRepository.findAll();
+		return true;
 	}
 	
 	@RequestMapping(value = "AllChapiter",method = RequestMethod.GET)

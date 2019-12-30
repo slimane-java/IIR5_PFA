@@ -27,7 +27,7 @@ public class CoursRestService {
 	@RequestMapping(value = "AddCours",method = RequestMethod.POST)
 	public Cours AddCours(@RequestBody() Cours c )
 	{
-		return coursRepository.save(c);
+		return coursRepository.saveAndFlush(c);
 	}
 	
 	@RequestMapping(value = "UpdateCours",method = RequestMethod.POST)

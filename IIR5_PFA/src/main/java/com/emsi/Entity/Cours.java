@@ -69,10 +69,10 @@ public class Cours implements Serializable{
 	public int getIdCour() {
 		return IdCour;
 	}
+	
 	public void setIdCour(int idCour) {
 		IdCour = idCour;
 	}
-	
 	public Set<User> getUsers() {
 		return users;
 	}

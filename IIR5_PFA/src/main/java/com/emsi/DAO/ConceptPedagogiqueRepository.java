@@ -11,7 +11,7 @@ import com.emsi.Entity.ConceptPedagogique;
 public interface ConceptPedagogiqueRepository extends JpaRepository<ConceptPedagogique, Integer>{
 	
 	@Query(value = "SELECT u FROM ConceptPedagogique u"
-			+ " where u.chapiter.IdChapiter=?1 ")
+			+ " where u.chapiters.IdChapiter=?1 ")
 	List<ConceptPedagogique> GetconceptByChapiter(int id);
 
 }

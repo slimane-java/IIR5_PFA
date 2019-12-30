@@ -13,12 +13,22 @@ import javax.persistence.OneToMany;
 public class QSM extends ConceptPedagogique{
     private String Type;
 
-    public QSM(String nom, String url, String description, String type) {
-        super(nom, url, description);
-        this.Type=type;
-    }
+   
 
-    @OneToMany(mappedBy = "qsm")
+    public QSM(String nomConcept, String url, String description, Date dateCreation, int dure,String type) {
+		super(nomConcept, url, description, dateCreation, dure);
+		// TODO Auto-generated constructor stub
+		this.Type=type;
+	}
+
+
+	public QSM() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+
+	@OneToMany(mappedBy = "qsm")
     public String getType() {
         return Type;
     }

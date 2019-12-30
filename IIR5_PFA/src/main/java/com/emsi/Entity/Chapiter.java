@@ -1,9 +1,7 @@
 package com.emsi.Entity;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,13 +39,16 @@ public class Chapiter implements Serializable{
 	}
 	
 	
-
-	@OneToMany(mappedBy = "chapiter")
+	@OneToMany(mappedBy = "chapiters")
+	
 	
 	public int getIdChapiter() {
 		return IdChapiter;
 	}
 
+	public void setIdChapiter(int idChapiter) {
+		IdChapiter = idChapiter;
+	}
 	public String getNomChapiter() {
 		return NomChapiter;
 	}
@@ -66,6 +67,7 @@ public class Chapiter implements Serializable{
 	public void setCours(Cours cours) {
 		this.cours = cours;
 	}
+	
 	
 	
 	

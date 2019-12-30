@@ -31,7 +31,7 @@ public class ChapiterRestService {
 	@RequestMapping(value = "AddChapiter",method = RequestMethod.POST)
 	public Chapiter AddCours(@RequestBody() Chapiter c )
 	{
-		return chapiterRepository.save(c);
+		return chapiterRepository.saveAndFlush(c);
 	}
 	
 	@RequestMapping(value = "DeleteChapiter/{id}",method = RequestMethod.DELETE)

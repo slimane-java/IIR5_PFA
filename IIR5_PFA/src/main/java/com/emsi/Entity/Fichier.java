@@ -16,6 +16,13 @@ public class Fichier extends ConceptPedagogique{
 		super(nomConcept, url, description, dateCreation, dure);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "Fichier [toString()=" + super.toString() + "]";
+	}
+
+	
 	
 	
 	

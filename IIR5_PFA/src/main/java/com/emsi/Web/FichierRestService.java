@@ -1,5 +1,6 @@
 package com.emsi.Web;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.emsi.DAO.ConceptPedagogiqueRepository;
 import com.emsi.DAO.FichierRepository;
 import com.emsi.DAO.TpRepository;
+import com.emsi.DAO.VideoRepository;
+import com.emsi.Entity.ConceptPedagogique;
 import com.emsi.Entity.Fichier;
 import com.emsi.Entity.Tp;
 
@@ -20,8 +24,11 @@ import com.emsi.Entity.Tp;
 @CrossOrigin("*")
 public class FichierRestService {
 	
+	
 	@Autowired
 	private FichierRepository fichierRepository;
+	
+	
 	
 	
 	@RequestMapping(value = "AddFichier",method = RequestMethod.POST)
@@ -36,8 +43,20 @@ public class FichierRestService {
 	public boolean DeleteFichier(@PathVariable int id )
 	{
 		fichierRepository.deleteById(id);
-	return true;
+		return true;
 		
+	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value = "GetFichier/{id}",method = RequestMethod.GET)
+	public Optional<Fichier> GetFichier(@PathVariable int id)
+	{
+		
+		return fichierRepository.findById(id);	
 	}
 	
 	@RequestMapping(value = "AllFichier",method = RequestMethod.GET)
@@ -47,10 +66,5 @@ public class FichierRestService {
 	}
 	
 	
-	@RequestMapping(value = "Getfichier/{id}",method = RequestMethod.GET)
-	public Optional<Fichier> GetFichier(@PathVariable int id)
-	{
-		return fichierRepository.findById(id);
-	}
 
 }

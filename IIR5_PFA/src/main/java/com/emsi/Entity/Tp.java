@@ -11,6 +11,16 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Tp extends ConceptPedagogique{
+
+	public Tp() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Tp(String nomConcept, String url, String description, Date dateCreation, int dure) {
+		super(nomConcept, url, description, dateCreation, dure);
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	

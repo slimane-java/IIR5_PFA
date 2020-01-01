@@ -53,4 +53,10 @@ public class ChapiterRestService {
 		return chapiterRepository.GetChapiterByCours(id);
 	}
 	
+	@RequestMapping(value = "GetChapiterById/{id}",method = RequestMethod.GET)
+	public Optional<Chapiter> GetChapiterById(@PathVariable int id)
+	{
+		return chapiterRepository.findById(id);
+	}
+	
 }

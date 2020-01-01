@@ -50,7 +50,7 @@ public class UserRestService {
 			
 		Optional<Etudiant>e=etudiantRepository.findById(u.get().getIdUser());
 		
-		map.add("etudiantEspace");
+		map.add("homeEtudiant");
 		map.add(""+e.get().getIdUser());
 			
 		}

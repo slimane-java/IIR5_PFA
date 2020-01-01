@@ -31,7 +31,7 @@ public class ConceptPedagogique implements Serializable{
 	private Date DateCreation;
 	private int  Dure ;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	private Chapiter chapiters;
 	
 	
@@ -93,6 +93,11 @@ public class ConceptPedagogique implements Serializable{
 	}
 	public void setChapiters(Chapiter chapiters) {
 		this.chapiters = chapiters;
+	}
+	@Override
+	public String toString() {
+		return "ConceptPedagogique [IdCP=" + IdCP + ", NomConcept=" + NomConcept + ", Url=" + Url + ", Description="
+				+ Description + ", DateCreation=" + DateCreation + ", Dure=" + Dure + ", chapiters=" + chapiters + "]";
 	}
 	
 	
